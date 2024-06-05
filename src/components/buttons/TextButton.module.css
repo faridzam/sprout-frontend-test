@@ -1,0 +1,14 @@
+.textButton{
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.textButton:hover{
+  transform: scale(1.1);
+}
+
+.textButton:active{
+  transform: scale(1);
+}

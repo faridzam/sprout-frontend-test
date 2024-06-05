@@ -1,0 +1,24 @@
+.pokelistHeaderContainer{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokeListHeaderTitle{
+  position: absolute;
+  left: 16px;
+  top: auto;
+  bottom: auto;
+  font-size: 24px;
+}
+
+@media only screen and (max-width: 720px) {
+  .pokelistHeaderContainer{
+    flex-direction: column;
+    gap: 16px;
+  }
+  .pokeListHeaderTitle {
+    position: relative;
+  }
+}
