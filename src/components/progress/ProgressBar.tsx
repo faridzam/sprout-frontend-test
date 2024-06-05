@@ -1,18 +1,19 @@
-import styles from './ProgressBar.module.css'
+import styles from './ProgressBar.module.css';
 
 interface IProgressBarProps {
   value : number
+  max?: number
   [key: string]: any
 }
 
 const ProgressBar = (params: IProgressBarProps) => {
-  const {value} = params
+  const {value, max=100} = params
 
   return (
     <progress
-      className={styles.progressBar}
+      className={`progressBar ${styles.progressBar} ${value >= 50 ? styles.progressBarHigh : styles.progressBarLow}`}
       value={value}
-      max={100}
+      max={max}
     />
   )
 }

@@ -2,11 +2,10 @@
   position: relative;
   width: 100%;
   max-width: 400px;
-  height: 640px;
+  height: 720px;
   display: flex;
   flex-direction: column;
   border-radius: 32px;
-  overflow: hidden;
 }
 
 .pokemonDetailCardWrapperTop{
@@ -17,8 +16,7 @@
   background-color: #fff;
   margin-top: -50px;
   flex-grow: 1;
-  border-top-left-radius: 32px;
-  border-top-right-radius: 32px;
+  border-radius: 32px;
 }
 
 .pokemonDetailCardHeader{
@@ -57,6 +55,8 @@
 
 .pokemonDetailCardTab{
   margin-top: 32px;
+  max-height: 300px;
+  overflow: auto;
 }
 
 @media only screen and (max-width: 539px) {

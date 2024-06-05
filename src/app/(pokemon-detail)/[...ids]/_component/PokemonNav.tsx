@@ -1,7 +1,7 @@
 'use client'
 
 import { Typography } from "@/components/typography/Typography"
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { Arrow } from "./Arrow"
 
@@ -91,13 +91,16 @@ export const PokemonNav = (params: any) => {
                 alignItems: 'center',
               }}
             >
-              <Image 
+              <Image
                 src={params.data.pokemon_v2_pokemons[0].pokemon_v2_pokemonsprites[0].sprites ?? "/images/no-image.jpg"}
                 alt={`image-${params.data.pokemon_v2_pokemons[0].id}`}
                 width={30}
                 height={30}
                 loading="lazy"
-              />
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
               <div style={{marginLeft: '16px'}}>
                 <Typography fontSize={'24px'} >no. {params.data.pokemon_v2_pokemons[0].id}</Typography>
               </div>
@@ -112,12 +115,15 @@ export const PokemonNav = (params: any) => {
               }}
             >
               <Typography fontSize={'24px'}>{params.data.pokemon_v2_pokemons[0].name}</Typography>
-              <Image 
+              <Image
                 src={'/images/pokeball.svg'}
                 alt={`poke-ball`}
                 width={30}
                 height={30}
-              />
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </div>
           </div>
         </div>
@@ -131,5 +137,5 @@ export const PokemonNav = (params: any) => {
         onClick={handleNext}
       />
     </div>
-  )
+  );
 }

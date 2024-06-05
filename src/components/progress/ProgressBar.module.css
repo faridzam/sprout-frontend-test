@@ -1,7 +1,16 @@
 .progressBar{
-  background: #3dccc7;
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-/* .progressBar[part="value"] {
+.progressBar::-webkit-progress-bar{
+  background: #DDD;
+}
 
-} */
+.progressBarLow::-webkit-progress-value{
+  background: #f38375;
+}
+.progressBarHigh::-webkit-progress-value{
+  background: #3dccc7;
+}

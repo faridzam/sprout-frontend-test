@@ -6,10 +6,12 @@ import { GridRowContainer } from "@/components/container/GridRowContainer"
 import { RowContainer } from "@/components/container/RowContainer"
 import { Typography } from "@/components/typography/Typography"
 import colors from "@/constants/colors"
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { useState } from "react"
 import styles from './PokemonDetailCard.module.css'
 import TabAbout from "./tabs/TabAbout"
+import TabEvolution from "./tabs/TabEvolution"
+import TabMoves from "./tabs/TabMoves"
 import TabStats from "./tabs/TabStats"
 
 const PokemonDetailCard = (
@@ -46,12 +48,12 @@ const PokemonDetailCard = (
     {
       id: 3,
       title: "Evolution",
-      component: <></>
+      component: <TabEvolution pokemonDetail={pokemonDetail} />
     },
     {
       id: 4,
       title: "Moves",
-      component: <></>
+      component: <TabMoves pokemon_v2_pokemonspecies={pokemon_v2_pokemonspecies} />
     },
   ]
 
@@ -104,8 +106,11 @@ const PokemonDetailCard = (
             }
             alt="pokemon-image"
             fill
-            objectFit="contain"
-          />
+            style={{
+              maxWidth: "100%",
+              height: "100%",
+              objectFit: "contain"
+            }} />
         </div>
       </div>
       <div className={styles.pokemonDetailCardWrapperBottom}>
@@ -138,7 +143,7 @@ const PokemonDetailCard = (
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default PokemonDetailCard

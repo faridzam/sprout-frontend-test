@@ -42,6 +42,14 @@ export default async function usePokemonDetail (id: string[]){
                         }
                         base_stat
                     }
+                    pokemon_v2_pokemonmoves(distinct_on: move_id) {
+                        move_id
+                        pokemon_v2_move {
+                            id
+                            name
+                            power
+                        }
+                    }
                 }
                 pokemon_v2_pokemoncolor {
                     id

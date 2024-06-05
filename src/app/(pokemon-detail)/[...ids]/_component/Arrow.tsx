@@ -1,6 +1,6 @@
 'use client'
 
-import Image from "next/legacy/image";
+import Image from "next/image";
 import styles from './Arrow.module.css';
 
 export const Arrow = (params: any) => {
@@ -40,7 +40,10 @@ export const Arrow = (params: any) => {
         width={20}
         height={20}
         loading="lazy"
-      />
+        style={{
+          maxWidth: "100%",
+          height: "auto"
+        }} />
     </div>
-  )
+  );
 }
