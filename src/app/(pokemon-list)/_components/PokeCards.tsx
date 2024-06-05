@@ -57,7 +57,7 @@ const PokeCards = (params: any) => {
           }
         </GridRowContainer>
         :
-        <p>loading...</p>
+        <></>
       }
     </div>
   )

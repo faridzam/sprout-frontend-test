@@ -7,6 +7,8 @@
   height: 150px;
   border-radius: 16px;
   overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transition: ease-in-out .3s;
 }
 
 .pokeCardBox:hover{
@@ -37,4 +39,9 @@
   bottom: -50px;
   mix-blend-mode: screen;
   z-index: 1;
+}
+
+.pokeCardBox:hover{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  transform: scale(1.05);
 }
