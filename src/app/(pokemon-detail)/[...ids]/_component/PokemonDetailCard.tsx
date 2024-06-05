@@ -2,12 +2,15 @@
 
 import TextButton from "@/components/buttons/TextButton"
 import { Chip } from "@/components/chip/Chip"
+import { ColumnContainer } from "@/components/container/ColumnContainer"
 import { GridRowContainer } from "@/components/container/GridRowContainer"
 import { RowContainer } from "@/components/container/RowContainer"
 import { Typography } from "@/components/typography/Typography"
 import colors from "@/constants/colors"
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 import { useState } from "react"
+import { Arrow } from "./Arrow"
 import styles from './PokemonDetailCard.module.css'
 import TabAbout from "./tabs/TabAbout"
 import TabEvolution from "./tabs/TabEvolution"
@@ -24,6 +27,8 @@ const PokemonDetailCard = (
     ids: string[]
   }
 ) => {
+
+  const router = useRouter();
 
   const pokemon_v2_pokemonspecies = pokemonDetail.data.pokemon_v2_evolutionchain_by_pk.pokemon_v2_pokemonspecies.find((spec: any) => {
     if (ids[1]) {
@@ -70,22 +75,30 @@ const PokemonDetailCard = (
       <div className={styles.pokemonDetailCardWrapperTop}>
         <div className={styles.pokemonDetailCardHeader}>
           <div className={styles.pokemonDetailCardHeaderLeft}>
-            <Typography color={colors.white.lightest} fontSize="24px" fontWeight={700}>
-              {pokemon_v2_pokemonspecies.pokemon_v2_pokemons[0].name}
-            </Typography>
-            <RowContainer gap="8px" className={styles.pokemonDetailCardHeaderChipContainer}>
-              {
-                pokemon_v2_pokemonspecies.pokemon_v2_pokemons[0].pokemon_v2_pokemontypes.map((type: any) => (
-                  <Chip 
-                    key={`pokemon-type-${type.pokemon_v2_type.id}`}
-                    color={pokemon_v2_pokemonspecies.pokemon_v2_pokemoncolor.name}
-                  >
-                    <Typography color={colors.white.lightest}>
-                      {type.pokemon_v2_type.name}
-                    </Typography>
-                  </Chip>
-                ))
-              }
+            <RowContainer alignItems="flex-start" gap="8px">
+              <Arrow
+                direction={'left'}
+                onClick={() => router.back()}
+              />
+              <ColumnContainer justifyContent="flex-start">
+                <Typography color={colors.white.lightest} fontSize="24px" fontWeight={700}>
+                  {pokemon_v2_pokemonspecies.pokemon_v2_pokemons[0].name}
+                </Typography>
+                <RowContainer gap="8px" className={styles.pokemonDetailCardHeaderChipContainer}>
+                  {
+                    pokemon_v2_pokemonspecies.pokemon_v2_pokemons[0].pokemon_v2_pokemontypes.map((type: any) => (
+                      <Chip 
+                        key={`pokemon-type-${type.pokemon_v2_type.id}`}
+                        color={pokemon_v2_pokemonspecies.pokemon_v2_pokemoncolor.name}
+                      >
+                        <Typography color={colors.white.lightest}>
+                          {type.pokemon_v2_type.name}
+                        </Typography>
+                      </Chip>
+                    ))
+                  }
+                </RowContainer>
+              </ColumnContainer>
             </RowContainer>
           </div>
           <div className={styles.pokemonDetailCardHeaderRight}>
@@ -112,6 +125,14 @@ const PokemonDetailCard = (
               objectFit: "contain"
             }} />
         </div>
+        <Image
+          className={styles.pokeCardPokeballIcon}
+          src={'/images/pokeball.svg'}
+          alt="pokeball-icon"
+          width={300}
+          height={300}
+          loading="lazy"
+        />
       </div>
       <div className={styles.pokemonDetailCardWrapperBottom}>
         <GridRowContainer

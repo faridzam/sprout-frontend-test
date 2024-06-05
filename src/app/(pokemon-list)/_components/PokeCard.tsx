@@ -55,10 +55,7 @@ export const PokeCard = (params: any) => {
         width={150}
         height={150}
         loading="lazy"
-        style={{
-          maxWidth: "100%",
-          height: "auto"
-        }} />
+      />
       
       <div
         className={customStyle.pokeCardImageContainer}
@@ -69,9 +66,7 @@ export const PokeCard = (params: any) => {
           width={80}
           height={80}
           loading="lazy"
-          style={{
-            objectFit: 'contain'
-          }} />
+        />
       </div>
 
     </div>

@@ -6,8 +6,7 @@ export default async function usePokemonList (keyword: string){
     const getListQuery = gql`query Pokemon_v2_evolutionchain($keyword:String) {
         pokemon_v2_evolutionchain(
             where: { pokemon_v2_pokemonspecies: { pokemon_v2_pokemons: { name: { _ilike: $keyword } } } }
-            limit: 100
-            offset: 0
+            limit: 200
         ) {
             id
             pokemon_v2_pokemonspecies(
@@ -41,9 +40,8 @@ export default async function usePokemonList (keyword: string){
     const {data} = await getClient().query({
         query: getListQuery,
         variables: {
-            keyword: keyword
+            keyword: keyword,
         },
-
     });
 
     return {data}

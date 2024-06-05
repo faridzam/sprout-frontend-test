@@ -1,5 +1,6 @@
 'use client'
 
+import colors from "@/constants/colors";
 import Image from "next/image";
 import styles from './Arrow.module.css';
 
@@ -28,8 +29,9 @@ export const Arrow = (params: any) => {
     <div
       className={styles.arrow}
       style={{
-        width: '20px',
-        height: '20px',
+        marginTop: '4px',
+        width: '25px',
+        height: '25px',
         transform: `rotate(${ratationDegree()}deg)`
       }}
       onClick={() => params.onClick()}
@@ -37,12 +39,13 @@ export const Arrow = (params: any) => {
       <Image
         src="/images/triangle.svg"
         alt="triangle-icon"
-        width={20}
-        height={20}
+        width={25}
+        height={25}
         loading="lazy"
         style={{
           maxWidth: "100%",
-          height: "auto"
+          height: "auto",
+          fill: colors.white.lightest
         }} />
     </div>
   );
