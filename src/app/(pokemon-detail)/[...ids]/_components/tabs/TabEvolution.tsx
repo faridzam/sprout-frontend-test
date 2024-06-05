@@ -40,11 +40,6 @@ const TabEvolution = ({pokemonDetail}: {pokemonDetail: any}) => {
                 alt={`pokemon-image-${pokemon.id}`}
                 height={50}
                 width={50}
-                style={{
-                  maxWidth: "100%",
-                  height: "100%",
-                  objectFit: "contain"
-                }}
               />
             </div>
           </div>

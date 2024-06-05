@@ -1,7 +1,12 @@
+import LoadingModal from "@/components/modals/LoadingModal";
 import colors from "@/constants/colors";
-import PokemonDetailCard from "./_component/PokemonDetailCard";
+import dynamic from "next/dynamic";
 import usePokemonDetail from "./_hooks/usePokemonDetail";
 import styles from './page.module.css';
+
+const PokemonDetailCardLazy = dynamic(() => import('./_components/PokemonDetailCard'), {
+  loading: () => <LoadingModal />
+})
 
 const DetailPage = async ({ params }: { params: {ids: string[]} }) => {
 
@@ -17,7 +22,7 @@ const DetailPage = async ({ params }: { params: {ids: string[]} }) => {
         ]['lightest']
       }}
     >
-      <PokemonDetailCard
+      <PokemonDetailCardLazy
         pokemonDetail={pokemonDetail}
         ids={params.ids}
       />

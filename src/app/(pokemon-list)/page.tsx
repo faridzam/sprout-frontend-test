@@ -1,7 +1,15 @@
-import PokeCards from "./_components/PokeCards";
-import { PokeListHeader } from "./_components/PokeListHeader";
+import LoadingModal from "@/components/modals/LoadingModal";
+import dynamic from "next/dynamic";
 import usePokemonList from "./_hooks/usePokemonList";
 import styles from './page.module.css';
+
+
+const PokeCardsLazy = dynamic(() => import('./_components/PokeCards'), {
+  loading: () => <LoadingModal />
+})
+const PokeListHeaderLazy = dynamic(() => import('./_components/PokeListHeader'), {
+  loading: () => <LoadingModal />
+})
 
 export default async function Home(props: any) {
 
@@ -11,8 +19,8 @@ export default async function Home(props: any) {
 
   return (
     <div className={styles.pokemonListPage}>
-      <PokeListHeader />
-      <PokeCards data={data} />
+      <PokeListHeaderLazy />
+      <PokeCardsLazy data={data} />
     </div>
   );
 }

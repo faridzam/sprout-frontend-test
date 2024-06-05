@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import styles from './PokeListHeader.module.css';
 
-export const PokeListHeader = () => {
+const PokeListHeader = () => {
   const router = useRouter();
   const [keyword, setKeyword] = useState<string>('');
   const {isSmall} = useDeviceSizes()
@@ -50,3 +50,5 @@ export const PokeListHeader = () => {
     </div>
   )
 }
+
+export default PokeListHeader
