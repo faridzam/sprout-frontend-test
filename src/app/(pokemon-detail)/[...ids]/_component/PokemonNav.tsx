@@ -1,7 +1,7 @@
 'use client'
 
 import { Typography } from "@/components/typography/Typography"
-import Image from "next/image"
+import Image from "next/legacy/image"
 import { useRouter } from "next/navigation"
 import { Arrow } from "./Arrow"
 

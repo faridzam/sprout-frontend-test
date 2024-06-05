@@ -4,7 +4,7 @@ import { Chip } from "@/components/chip/Chip"
 import { ColumnContainer } from "@/components/container/ColumnContainer"
 import { Typography } from "@/components/typography/Typography"
 import colors from "@/constants/colors"
-import Image from "next/image"
+import Image from "next/legacy/image"
 import { useRouter } from "next/navigation"
 import customStyle from './PokeCard.module.css'
 

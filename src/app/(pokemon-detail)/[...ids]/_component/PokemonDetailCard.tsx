@@ -6,7 +6,7 @@ import { GridRowContainer } from "@/components/container/GridRowContainer"
 import { RowContainer } from "@/components/container/RowContainer"
 import { Typography } from "@/components/typography/Typography"
 import colors from "@/constants/colors"
-import Image from "next/image"
+import Image from "next/legacy/image"
 import { useState } from "react"
 import styles from './PokemonDetailCard.module.css'
 import TabAbout from "./tabs/TabAbout"
