@@ -6,5 +6,4 @@ dont forget to run "npm install" first!
 -- command list --
 build : npm run build
 start : npm run start
-unit test : npm run test
 dev : npm run dev
