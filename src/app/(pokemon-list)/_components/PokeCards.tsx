@@ -16,14 +16,13 @@ const PokeCards = (params: any) => {
   const columns = isSmallMobile?1:isMobile?1:isSurfaceDuo?2:isTablet?2:isSmallDesktop?3:isLargeDesktop?4:undefined
   
   return (
-    <div className={styles.pokeCardsContainer}>
+    <div className={styles.pokeCardsContainer} data-testid="poke-cards-container">
       {
         columns
         ?
         <GridRowContainer
           columns={columns}
           gap="16px"
-          data-testid="poke-cards-container"
         >
           {
             data.pokemon_v2_evolutionchain.map((evolution: any) => (
